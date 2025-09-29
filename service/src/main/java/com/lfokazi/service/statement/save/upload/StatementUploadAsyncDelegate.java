@@ -6,6 +6,7 @@ import jakarta.annotation.Nonnull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
@@ -15,6 +16,7 @@ class StatementUploadAsyncDelegate {
 
     @Async
     @WithSpan
+    @Transactional
     void uploadAsync(@Nonnull Customer customer, @Nonnull MultipartFile file) {
         delegate.upload(customer, file);
     }

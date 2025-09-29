@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import java.time.temporal.ChronoUnit;
+import java.time.Duration;
 
 @Component
 @RequiredArgsConstructor
@@ -17,9 +17,11 @@ public class RsStatementDownloadMapper extends RsBaseMapper<StatementDownload, R
     @Override
     public RsStatementDownload map(StatementDownload download) {
         var dto = mapper.map(download, RsStatementDownload.class);
+        var duration = Duration.ofMillis(download.getDurationMs());
         dto.setStatementId(download.getId());
         dto.setDownloadUrl(download.getUrl());
-        dto.setExpiresAt(download.getDateRequested().plus(download.getDurationMs(), ChronoUnit.MILLIS));
+        dto.setDuration(duration);
+        dto.setExpiresAt(download.getDateRequested().plus(duration));
 
         return dto;
     }

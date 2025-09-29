@@ -1,0 +1,81 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+  hostmetrics:
+    collection_interval: 10s
+    scrapers:
+      paging:
+        metrics:
+          system.paging.utilization:
+            enabled: true
+      cpu:
+        metrics:
+          system.cpu.utilization:
+            enabled: true
+      disk:
+      filesystem:
+        metrics:
+          system.filesystem.utilization:
+            enabled: true
+      load:
+      memory:
+      network:
+      processes:
+
+connectors:
+  datadog/connector:
+
+processors:
+  batch:
+    send_batch_max_size: 100
+    send_batch_size: 10
+    timeout: 10s
+
+exporters:
+  otlphttp/logs:
+    compression: gzip
+    logs_endpoint: ${LOGS_API_ENDPOINT}
+    headers:
+      x-aws-log-group: ${CLOUDWATCH_LOG_GROUP}
+      x-aws-log-stream: ${CLOUDWATCH_LOG_STREAM}
+    auth:
+      authenticator: sigv4auth/logs
+
+  otlphttp/traces:
+    compression: gzip
+    traces_endpoint: ${TRACES_API_ENDPOINT}
+    auth:
+      authenticator: sigv4auth/traces
+  datadog/exporter:
+    api:
+      site: ${DATADOG_API_URL}
+      key: ${DATADOG_API_KEY}
+
+extensions:
+  sigv4auth/logs:
+    region: ${AWS_REGION}
+    service: "logs"
+  sigv4auth/traces:
+    region: ${AWS_REGION}
+    service: "xray"
+
+service:
+  telemetry:
+  extensions: [sigv4auth/logs, sigv4auth/traces]
+  pipelines:
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlphttp/logs, datadog/exporter]
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlphttp/traces, datadog/connector, datadog/exporter]
+    metrics:
+      receivers: [otlp, datadog/connector, hostmetrics]
+      processors: [batch]
+      exporters: [datadog/exporter]

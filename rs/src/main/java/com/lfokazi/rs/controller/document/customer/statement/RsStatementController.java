@@ -14,9 +14,12 @@ import com.lfokazi.service.statement.download.load.StatementDownloadService;
 import com.lfokazi.service.statement.load.StatementService;
 import com.lfokazi.service.statement.save.download.StatementDownloader;
 import com.lfokazi.service.statement.save.upload.StatementUploader;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -33,6 +36,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import static org.springframework.data.domain.Sort.Direction.DESC;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 @RestController
 @RequestMapping(RsPath.CUSTOMER_STATEMENTS)
@@ -45,37 +50,41 @@ public class RsStatementController {
     private final RsStatementMapper rsStatementMapper;
     private final RsStatementDownloadMapper rsStatementDownloadMapper;
 
-    @GetMapping
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
     @Transactional(readOnly = true)
-    public RsPagedResources<RsStatement> statements(@PageableDefault(sort = "id", direction = DESC) Pageable pageable,
-                                                    @Valid StatementFilter filter) {
+    public RsPagedResources<RsStatement> statements(
+            @PageableDefault(sort = "id", direction = DESC) @ParameterObject Pageable pageable,
+            @Valid @ParameterObject StatementFilter filter) {
         return rsStatementMapper.mapPage(statementService.findStatements(pageable, filter));
     }
 
-    @GetMapping("/downloads")
+    @GetMapping(path = "/downloads", produces = APPLICATION_JSON_VALUE)
     @Transactional(readOnly = true)
-    public RsPagedResources<RsStatementDownload> downloads(@PageableDefault(sort = "id", direction = DESC)
-                                                           Pageable pageable, @Valid StatementDownloadFilter filter) {
+    public RsPagedResources<RsStatementDownload> downloads(
+            @PageableDefault(sort = "id", direction = DESC) @ParameterObject Pageable pageable,
+            @Valid @ParameterObject StatementDownloadFilter filter) {
         return rsStatementDownloadMapper.mapPage(statementDownloadService.findDownloads(pageable, filter));
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @PostMapping("/upload")
+    @PostMapping(path = "/upload", consumes = MULTIPART_FORM_DATA_VALUE)
     @Transactional
-    public void upload(@RequestPart(value = "fileData") MultipartFile file,
-                              @RequestParam @Positive long customerId) {
+    public void upload(
+            @RequestPart(value = "fileData") @Parameter(content = @Content(mediaType = MULTIPART_FORM_DATA_VALUE))
+            MultipartFile file, @RequestParam @Positive long customerId) {
          statementUploader.uploadAsync(customerId, file);
     }
 
-    @GetMapping("/{statementId}/downloads")
+    @GetMapping(path = "/{statementId}/downloads", produces = APPLICATION_JSON_VALUE)
     @Transactional(readOnly = true)
-    public RsPagedResources<RsStatementDownload> statementDownloads(@PageableDefault(sort = "id", direction = DESC)
-                                                           Pageable pageable, @PathVariable long statementId,
-                                                                    @Valid StatementDownloadFilter filter) {
+    public RsPagedResources<RsStatementDownload> statementDownloads(
+            @PageableDefault(sort = "id", direction = DESC) @ParameterObject
+            Pageable pageable, @PathVariable long statementId, @Valid @ParameterObject StatementDownloadFilter filter) {
         return rsStatementDownloadMapper.mapPage(statementDownloadService.findDownloads(pageable, statementId, filter));
     }
 
-    @PostMapping("/{statementId}/download")
+    @PostMapping(path = "/{statementId}/download", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    @Transactional
     public StatementDownloadInfo download(@PathVariable @Positive long statementId,
                                           @RequestBody StatementDownloadParams params) {
         return statementDownloader.download(statementId, params);

@@ -13,7 +13,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -28,7 +28,7 @@ public class StatementDownload {
     @GeneratedValue
     private Long id;
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime dateRequested;
 
     @Nonnull

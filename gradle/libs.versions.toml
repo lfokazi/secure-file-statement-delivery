@@ -21,6 +21,9 @@ otel-annotations = "2.12.0"
 # Mapping
 modelmapper = "3.2.4"
 
+# Documentation
+springdoc-openapi = "2.8.13"
+
 [libraries]
 # Spring Boot
 spring-boot-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "spring-boot" }
@@ -79,6 +82,9 @@ assertj-core = { module = "org.assertj:assertj-core"}
 testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter" }
 testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
 testcontainers-localstack = { module = "org.testcontainers:localstack" }
+
+# Documentation
+springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc-openapi" }
 
 [bundles]
 

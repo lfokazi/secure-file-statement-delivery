@@ -46,6 +46,9 @@ public class OAuth2ResourceServerSecurityConfiguration {
         Okta.configureResourceServer401ResponseBody(http);
 
         http.authorizeHttpRequests(authorizeRequests -> {
+            authorizeRequests.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
+                    .permitAll();
+
             authorizeRequests.requestMatchers("/v1/api/**")
                     .hasAnyRole(Roles.Workforce);
             authorizeRequests.requestMatchers("/v1/api/cs/**")

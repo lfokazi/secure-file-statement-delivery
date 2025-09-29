@@ -28,7 +28,8 @@ class StatementUploadDelegate {
     @Timed
     Statement upload(@Nonnull Customer customer, @Nonnull MultipartFile file) {
         var nowMillis = System.currentTimeMillis();
-        var objectKey = String.format("%s%s/%s", bucketPrefix, customer.getId(), nowMillis);
+        var fileName = file.getResource().getFilename();
+        var objectKey = String.format("%s%s/%s-%s", bucketPrefix, customer.getId(), nowMillis, fileName);
 
         try (var inputStream = file.getInputStream()) {
             var s3Resource = s3Operations.upload(bucketName, objectKey, inputStream);
