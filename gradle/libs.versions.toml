@@ -1,0 +1,90 @@
+[versions]
+
+# Gradle & Build Tools
+gradle-wrapper = "8.14.2"
+
+# Spring Boot
+spring-boot = "3.5.5"
+
+# Utilities
+lombok = "1.18.40"
+
+# Database Drivers
+postgresql = "42.7.4"
+
+# Observability & Monitoring
+otel-java-agent = "2.10.0"
+otel-api = "1.44.1"
+otel-instrumentation = "2.10.0-alpha"
+otel-annotations = "2.12.0"
+
+[libraries]
+# Spring Boot
+spring-boot-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-test-containers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot" }
+spring-web = { module = "org.springframework:spring-web" }
+
+# Spring Security
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+spring-boot-starter-outh2-resource-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server" }
+spring-security-test = { module = "org.springframework.security:spring-security-test" }
+okta-spring-boot-starter = { module = "com.okta.spring:okta-spring-boot-starter", version = "3.0.7" }
+auth0-java-jwt = { module = "com.auth0:java-jwt", version = "4.4.0" }
+auth0 = { module = "com.auth0:auth0", version = "2.1.0" }
+
+# Spring Framework
+spring-context = { module = "org.springframework:spring-context" }
+
+# Spring Cloud AWS
+spring-cloud-aws-dependencies = { module = "io.awspring.cloud:spring-cloud-aws-dependencies", version = "3.3.0" }
+spring-cloud-aws-starter-sns = { module = "io.awspring.cloud:spring-cloud-aws-starter-sns" }
+spring-cloud-aws-starter-s3 = { module = "io.awspring.cloud:spring-cloud-aws-starter-s3" }
+spring-cloud-aws-testcontainers = { module = "io.awspring.cloud:spring-cloud-aws-testcontainers"}
+
+# Lombok
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+
+# Commons
+commons-lang3 = { module = "org.apache.commons:commons-lang3" }
+
+# OpenTelemetry & Monitoring
+opentelemetry-api = { module = "io.opentelemetry:opentelemetry-api", version.ref = "otel-api" }
+opentelemetry-micrometer = { module = "io.opentelemetry.instrumentation:opentelemetry-micrometer-1.5", version.ref = "otel-instrumentation" }
+opentelemetry-javaagent = { module = "io.opentelemetry.javaagent:opentelemetry-javaagent", version.ref = "otel-java-agent" }
+opentelemetry-instrumentation-annotations = { module = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations", version.ref = "otel-annotations" }
+micrometer-core = { module = "io.micrometer:micrometer-core" }
+
+# JSON Processing
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" }
+
+# Database Drivers
+postgresql-driver = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+
+# Testing
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api" }
+assertj-core = { module = "org.assertj:assertj-core"}
+testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
+testcontainers-localstack = { module = "org.testcontainers:localstack" }
+
+[bundles]
+
+# Common testing dependencies
+testing-junit = ["junit-jupiter-api", "assertj-core"]
+
+[plugins]
+
+# Core Gradle plugins
+java = { id = "java" }
+base = { id = "base" }
+test-report-aggregation = { id = "test-report-aggregation" }
+
+# Spring Boot
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }

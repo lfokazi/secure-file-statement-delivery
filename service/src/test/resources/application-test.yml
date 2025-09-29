@@ -1,0 +1,32 @@
+logging:
+  level:
+    root: INFO
+spring:
+  config:
+    activate:
+      on-profile: test
+  cloud:
+    aws:
+      credentials:
+        profile:
+          name: lfokazi
+      region:
+        static: af-south-1
+      s3:
+        endpoint: http://localhost:4566
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    mapper:
+      require-handlers-for-java8-times: false
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+app:
+  aws:
+    s3:
+      statements:
+        bucket-name: documents-bucket
+        object-key-prefix: statements/

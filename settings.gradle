@@ -1,0 +1,8 @@
+rootProject.name = 'file-delivery-system'
+include 'dto'
+include 'rs'
+include 'core'
+include 'test-core'
+include 'service'
+include 'domain'
+include 'rs-dto'

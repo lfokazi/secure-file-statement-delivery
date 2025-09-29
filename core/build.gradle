@@ -1,0 +1,37 @@
+plugins {
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.java)
+}
+
+group = 'com.lfokazi.statements'
+version = '1.0-0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Platform dependencies for BOM management
+    implementation(platform(libs.spring.boot.dependencies))
+    implementation(platform(libs.spring.cloud.aws.dependencies))
+
+
+    annotationProcessor libs.lombok
+    compileOnly libs.lombok
+
+    annotationProcessor libs.spring.boot.configuration.processor
+    implementation libs.spring.context
+    implementation libs.spring.boot.starter.data.jpa
+    implementation libs.jackson.datatype.jsr310
+    implementation libs.opentelemetry.api
+    implementation libs.opentelemetry.instrumentation.annotations
+    implementation libs.opentelemetry.micrometer
+    implementation libs.micrometer.core
+    implementation libs.okta.spring.boot.starter
+    implementation libs.spring.boot.starter.security
+    implementation libs.spring.boot.starter.outh2.resource.server
+}
+
+test {
+    useJUnitPlatform()
+}

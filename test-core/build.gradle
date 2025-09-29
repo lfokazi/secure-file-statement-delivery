@@ -1,0 +1,39 @@
+plugins {
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.java)
+}
+
+group = 'com.lfokazi.statements'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Platform dependencies for BOM management
+    implementation(platform(libs.spring.boot.dependencies))
+    implementation(platform(libs.spring.cloud.aws.dependencies))
+
+    annotationProcessor libs.lombok
+    compileOnly libs.lombok
+
+    implementation libs.spring.context
+    implementation libs.spring.cloud.aws.starter.s3
+    implementation libs.spring.boot.starter.data.jpa
+    implementation libs.jackson.databind
+    implementation libs.jackson.datatype.jsr310
+
+    implementation libs.spring.boot.starter.test
+    implementation libs.spring.security.test
+    implementation libs.spring.boot.test.containers
+    implementation libs.bundles.testing.junit
+    implementation libs.testcontainers.junit.jupiter
+    implementation libs.testcontainers.postgresql
+    implementation libs.testcontainers.localstack
+    implementation libs.spring.cloud.aws.testcontainers
+}
+
+test {
+    useJUnitPlatform()
+}
