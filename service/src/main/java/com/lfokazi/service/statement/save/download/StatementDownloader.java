@@ -6,5 +6,5 @@ import jakarta.annotation.Nonnull;
 
 public interface StatementDownloader {
     @Nonnull
-    StatementDownloadInfo download(@Nonnull StatementDownloadParams params);
+    StatementDownloadInfo download(long statementId, @Nonnull StatementDownloadParams params);
 }

@@ -1,0 +1,55 @@
+plugins {
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.java)
+}
+
+group = 'com.lfokazi.statements'
+version = '1.0-0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    mainClass = "net.lfokazi.SpringBootApplication"
+}
+
+
+dependencies {
+    // Platform dependencies for BOM management
+    implementation(platform(libs.spring.boot.dependencies))
+
+    implementation libs.spring.boot.starter.data.jpa
+    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.actuator
+    implementation libs.spring.boot.starter.validation
+    implementation libs.opentelemetry.api
+    implementation libs.spring.boot.starter.security
+    implementation libs.spring.boot.starter.outh2.resource.server
+    implementation libs.okta.spring.boot.starter
+    implementation libs.auth0.java.jwt
+    implementation libs.auth0
+    implementation libs.commons.lang3
+    implementation libs.modelmapper
+
+    annotationProcessor libs.spring.boot.configuration.processor
+    annotationProcessor libs.lombok
+    compileOnly libs.lombok
+
+    implementation project(':core')
+    implementation project(':service')
+    implementation project(':dto')
+    implementation project(':domain')
+    implementation project(':rs-dto')
+
+    testImplementation project(":test-core")
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.spring.security.test
+
+    runtimeOnly libs.opentelemetry.javaagent
+    runtimeOnly libs.postgresql.driver
+}
+
+test {
+    useJUnitPlatform()
+}

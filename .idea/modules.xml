@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/file-delivery-system.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/file-delivery-system.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/file-delivery-system.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/file-delivery-system.domain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto/file-delivery-system.dto.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dto/file-delivery-system.dto.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rs-dto/file-delivery-system.rs-dto.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rs-dto/file-delivery-system.rs-dto.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rs/file-delivery-system.rs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rs/file-delivery-system.rs.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/file-delivery-system.service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service/file-delivery-system.service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/test-core/file-delivery-system.test-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/test-core/file-delivery-system.test-core.main.iml" />
     </modules>

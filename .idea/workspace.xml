@@ -4,52 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1502e8f-6c85-4769-a07e-72260a951491" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/config/monitoring/MetricsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/config/monitoring/otel/OpenTelemetryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/exception/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/exception/InternalErrorException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/exception/ObjectNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/lfokazi/domain/customer/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/lfokazi/domain/statement/Statement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/com/lfokazi/domain/statement/download/StatementDownload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/StatementDownloadParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/event/StatementAfterDownloadRequestEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/filter/StatementDownloadFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/info/StatementDownloadInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/filter/StatementFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/upload/StatementUpload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/repository/customer/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/repository/statement/StatementRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/repository/statement/download/StatementDownloadRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/eventListener/StatementAfterDownloadRequestEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/save/create/StatementDownloadCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/save/create/StatementDownloadCreatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/load/StatementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/load/StatementServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/create/StatementCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/create/StatementCreatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloaderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploaderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/specification/customer/CustomerSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/specification/statement/StatementSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/specification/statement/download/StatementDownloadSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/download/load/StatementDownloadServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/load/StatementServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/download/StatementDownloaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/upload/StatementUploaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/resources/application-test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-core/src/main/java/com/lfokazi/BaseIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-core/src/main/java/com/lfokazi/TestApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-core/src/main/java/com/lfokazi/config/TestcontainersConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-core/src/main/resources/sql/init-test-data.sql" afterDir="false" />
+    <list default="true" id="f1502e8f-6c85-4769-a07e-72260a951491" name="Changes" comment="initial commit with full domain and service layers. rest layer pending...">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/rs-dto/file-delivery-system.rs-dto.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/rs/file-delivery-system.rs.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs-dto/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs-dto/src/main/java/com/lfokazi/rs/dto/common/RsPageInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs-dto/src/main/java/com/lfokazi/rs/dto/common/RsPagedResources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs-dto/src/main/java/com/lfokazi/rs/dto/statement/RsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs-dto/src/main/java/com/lfokazi/rs/dto/statement/download/RsStatementDownload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/SpringBootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/common/error/RsGlobalControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/common/error/RsHttpErrorInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/common/mapper/RsBaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/config/mapper/MapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/config/security/OAuth2ResourceServerSecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/config/security/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/controller/document/customer/statement/RsStatementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/mapper/document/customer/statement/RsStatementMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/mapper/document/customer/statement/download/RsStatementDownloadMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/path/RsCsPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/java/com/lfokazi/rs/path/RsPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/test/java/com/lfokazi/rs/controller/RsBaseIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rs/src/test/java/com/lfokazi/rs/controller/document/customer/statement/RsStatementControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploadAsyncDelegate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploadDelegate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.12/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.12/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/exception/InternalErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/lfokazi/core/exception/InternalErrorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/domain/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/com/lfokazi/domain/statement/download/StatementDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/com/lfokazi/domain/statement/download/StatementDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/dto/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/StatementDownloadParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/StatementDownloadParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/info/StatementDownloadInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/download/info/StatementDownloadInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/src/main/java/com/lfokazi/dto/statement/upload/StatementUpload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/reports/tests/test/classes/com.lfokazi.service.statement.save.download.StatementDownloaderTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/reports/tests/test/classes/com.lfokazi.service.statement.save.download.StatementDownloaderTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/reports/tests/test/packages/com.lfokazi.service.statement.save.download.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/reports/tests/test/packages/com.lfokazi.service.statement.save.download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/test-results/test/TEST-com.lfokazi.service.statement.save.download.StatementDownloaderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/test-results/test/TEST-com.lfokazi.service.statement.save.download.StatementDownloaderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/service/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/download/load/StatementDownloadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/download/StatementDownloaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploader.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/service/statement/save/upload/StatementUploaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/specification/statement/download/StatementDownloadSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/lfokazi/specification/statement/download/StatementDownloadSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/download/StatementDownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/download/StatementDownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/upload/StatementUploaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/upload/StatementUploaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/test-core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-core/src/main/java/com/lfokazi/BaseIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test-core/src/main/java/com/lfokazi/BaseIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +103,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="file-delivery-system" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="file-delivery-system" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="file-delivery-system" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -111,18 +146,25 @@
     "Gradle.Build domain.executor": "Run",
     "Gradle.Build secure-file-statement-delivery.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
+    "Gradle.RsStatementControllerTest.executor": "Run",
+    "Gradle.RsStatementControllerTest.getDownloads_success.executor": "Run",
+    "Gradle.RsStatementControllerTest.getStatements_success.executor": "Run",
+    "Gradle.RsStatementControllerTest.upload_success.executor": "Run",
+    "Gradle.RsStatementControllerTest.upload_unknown_customer.executor": "Run",
     "Gradle.StatementDownloadServiceTest.findStatements_by_customer_id.executor": "Run",
     "Gradle.StatementDownloadServiceTest.findStatements_no_filter.executor": "Debug",
     "Gradle.StatementDownloaderTest.download_success.executor": "Run",
     "Gradle.StatementServiceTest.executor": "Run",
     "Gradle.StatementServiceTest.findStatements_by_customer_id.executor": "Debug",
     "Gradle.StatementUploaderTest.executor": "Run",
-    "Gradle.StatementUploaderTest.upload_success.executor": "Run",
+    "Gradle.StatementUploaderTest.upload_success.executor": "Debug",
+    "Gradle.secure-file-statement-delivery [test].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/206779927/safespace/secure-file-statement-delivery/service/src/test/resources",
+    "last_opened_file_path": "/Users/206779927/safespace/secure-file-statement-delivery/rs/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -137,21 +179,26 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rs/src/main/resources" />
       <recent name="$PROJECT_DIR$/service/src/test/resources" />
       <recent name="$PROJECT_DIR$/test-core/src/main/resources/sql" />
       <recent name="$PROJECT_DIR$/gradle" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.lfokazi.rs.controller" />
+      <recent name="com.lfokazi.rs.workforce.mapper.document.customer.statement" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lfokazi.service.statement.download.load" />
-      <recent name="com.lfokazi.config" />
-      <recent name="com.lfokazi" />
-      <recent name="com.lfokazi.dto.statement" />
-      <recent name="com.lfokazi.specification.customer" />
+      <recent name="com.lfokazi.service.statement.save.upload.async" />
+      <recent name="com.lfokazi.rs.controller.document.customer.statement" />
+      <recent name="com.lfokazi.rs.workforce.mapper.statement.download" />
+      <recent name="com.lfokazi.rs.path" />
+      <recent name="com.lfokazi.rs.config.security" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.StatementDownloaderTest.download_success">
-    <configuration name="StatementDownloadServiceTest.findStatements_by_customer_id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.secure-file-statement-delivery [clean]">
+    <configuration name="RsStatementControllerTest.getDownloads_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,9 +209,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":service:test" />
+            <option value=":rs:test" />
             <option value="--tests" />
-            <option value="&quot;com.lfokazi.service.statement.download.load.StatementDownloadServiceTest.findStatements_by_customer_id&quot;" />
+            <option value="&quot;com.lfokazi.rs.controller.document.customer.statement.RsStatementControllerTest.getDownloads_success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -175,7 +222,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StatementDownloadServiceTest.findStatements_no_filter" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RsStatementControllerTest.getStatements_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,9 +233,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":service:test" />
+            <option value=":rs:test" />
             <option value="--tests" />
-            <option value="&quot;com.lfokazi.service.statement.download.load.StatementDownloadServiceTest.findStatements_no_filter&quot;" />
+            <option value="&quot;com.lfokazi.rs.controller.document.customer.statement.RsStatementControllerTest.getStatements_success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -199,7 +246,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StatementDownloaderTest.download_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RsStatementControllerTest.upload_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -210,9 +257,9 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":service:test" />
+            <option value=":rs:test" />
             <option value="--tests" />
-            <option value="&quot;com.lfokazi.service.statement.save.download.StatementDownloaderTest.download_success&quot;" />
+            <option value="&quot;com.lfokazi.rs.controller.document.customer.statement.RsStatementControllerTest.upload_success&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -223,61 +270,64 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StatementUploaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="secure-file-statement-delivery [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":service:test" />
-            <option value="--tests" />
-            <option value="&quot;com.lfokazi.service.statement.save.upload.StatementUploaderTest&quot;" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StatementUploaderTest.upload_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="secure-file-statement-delivery [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":service:test" />
-            <option value="--tests" />
-            <option value="&quot;com.lfokazi.service.statement.save.upload.StatementUploaderTest.upload_success&quot;" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
+    </configuration>
+    <configuration name="SpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="file-delivery-system.rs.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lfokazi.SpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.StatementDownloaderTest.download_success" />
-        <item itemvalue="Gradle.StatementUploaderTest" />
-        <item itemvalue="Gradle.StatementUploaderTest.upload_success" />
-        <item itemvalue="Gradle.StatementDownloadServiceTest.findStatements_by_customer_id" />
-        <item itemvalue="Gradle.StatementDownloadServiceTest.findStatements_no_filter" />
+        <item itemvalue="Gradle.secure-file-statement-delivery [clean]" />
+        <item itemvalue="Gradle.secure-file-statement-delivery [test]" />
+        <item itemvalue="Gradle.RsStatementControllerTest.getDownloads_success" />
+        <item itemvalue="Gradle.RsStatementControllerTest.upload_success" />
+        <item itemvalue="Gradle.RsStatementControllerTest.getStatements_success" />
       </list>
     </recent_temporary>
   </component>
@@ -300,12 +350,27 @@
       <workItem from="1759129227713" duration="402000" />
       <workItem from="1759129640837" duration="104000" />
       <workItem from="1759129754270" duration="2231000" />
-      <workItem from="1759132236136" duration="13971000" />
+      <workItem from="1759132236136" duration="19780000" />
+      <workItem from="1759152173884" duration="1512000" />
+      <workItem from="1759153864875" duration="5360000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit with full domain and service layers. rest layer pending...">
+      <option name="closed" value="true" />
+      <created>1759146305578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759146305578</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit with full domain and service layers. rest layer pending..." />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit with full domain and service layers. rest layer pending..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,7 +382,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/test/java/com/lfokazi/service/statement/save/upload/StatementUploaderTest.java</url>
-          <line>38</line>
+          <line>31</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

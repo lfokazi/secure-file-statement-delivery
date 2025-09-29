@@ -3,13 +3,10 @@ package com.lfokazi.service.statement.save.download;
 import com.lfokazi.BaseIntegrationTest;
 import com.lfokazi.domain.statement.Statement;
 import com.lfokazi.dto.statement.download.StatementDownloadParams;
-import com.lfokazi.dto.statement.upload.StatementUpload;
 import com.lfokazi.service.statement.save.upload.StatementUploader;
 import io.awspring.cloud.s3.S3Operations;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -36,11 +33,10 @@ public class StatementDownloaderTest extends BaseIntegrationTest {
 
         // request download
         var downloadParams = StatementDownloadParams.builder()
-                .statementId(uploadedStatement.getId())
                 .durationInMillis(Duration.ofDays(3).toMillis())
                 .build();
 
-        var downloadInfo = statementDownloader.download(downloadParams);
+        var downloadInfo = statementDownloader.download(uploadedStatement.getId(), downloadParams);
         assertThat(downloadInfo).isNotNull();
         assertThat(downloadInfo.getUrl()).isNotNull();
         assertThat(downloadInfo.getDuration()).isEqualTo(Duration.ofDays(3));
@@ -51,22 +47,13 @@ public class StatementDownloaderTest extends BaseIntegrationTest {
     }
 
     private Statement uploadStatement(long customerId) throws IOException {
-        var file = getTestFile();
-        var upload = StatementUpload.builder()
-                .customerId(customerId)
-                .build();
+        var file = getFile(TEST_FILE_NAME, TEST_FILE_PATH);
 
-        var uploadedStatement = statementUploader.upload(upload, file);
+        var uploadedStatement = statementUploader.upload(customerId, file);
         assertThat(uploadedStatement).isNotNull();
         var existsInS3 = s3Operations.objectExists(uploadedStatement.getBucketName(), uploadedStatement.getObjectKey());
         assertThat(existsInS3).isTrue();
 
         return uploadedStatement;
-    }
-
-    private MultipartFile getTestFile() throws IOException {
-        var fileInputStream = getClass().getResourceAsStream(TEST_FILE_PATH);
-        assertThat(fileInputStream).isNotNull();
-        return new MockMultipartFile(TEST_FILE_PATH, TEST_FILE_NAME, null, fileInputStream);
     }
 }

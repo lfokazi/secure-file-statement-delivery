@@ -7,9 +7,10 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
         </processorPath>
-        <module name="file-delivery-system.dto.main" />
         <module name="file-delivery-system.test-core.main" />
+        <module name="file-delivery-system.rs-dto.main" />
         <module name="file-delivery-system.domain.main" />
+        <module name="file-delivery-system.dto.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -18,6 +19,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
         </processorPath>
         <module name="file-delivery-system.service.main" />
+        <module name="file-delivery-system.rs.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -43,6 +45,12 @@
       <module name="file-delivery-system.dto" options="-parameters" />
       <module name="file-delivery-system.dto.main" options="-parameters" />
       <module name="file-delivery-system.dto.test" options="-parameters" />
+      <module name="file-delivery-system.rs" options="-parameters" />
+      <module name="file-delivery-system.rs-dto" options="-parameters" />
+      <module name="file-delivery-system.rs-dto.main" options="-parameters" />
+      <module name="file-delivery-system.rs-dto.test" options="-parameters" />
+      <module name="file-delivery-system.rs.main" options="-parameters" />
+      <module name="file-delivery-system.rs.test" options="-parameters" />
       <module name="file-delivery-system.service" options="-parameters" />
       <module name="file-delivery-system.service.main" options="-parameters" />
       <module name="file-delivery-system.service.test" options="-parameters" />

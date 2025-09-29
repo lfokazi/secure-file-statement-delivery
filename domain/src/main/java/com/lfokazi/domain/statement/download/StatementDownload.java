@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,9 +27,6 @@ public class StatementDownload {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Version
-    private int version;
 
     @CreatedDate
     private LocalDateTime dateRequested;

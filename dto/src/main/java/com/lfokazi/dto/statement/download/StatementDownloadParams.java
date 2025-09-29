@@ -12,9 +12,6 @@ import java.time.Duration;
 @Getter
 public class StatementDownloadParams {
     @Positive
-    private final long statementId;
-
-    @Positive
     @Builder.Default
     private final long durationInMillis = Duration.ofDays(7).toMillis();
 }

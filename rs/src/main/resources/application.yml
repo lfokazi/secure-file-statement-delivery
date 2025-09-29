@@ -1,0 +1,76 @@
+logging:
+  level:
+    root: ${LOG_LEVEL}
+spring:
+  config:
+    activate:
+      on-profile: docker
+  cloud:
+    aws:
+      credentials:
+        profile:
+          name: ${AWS_PROFILE}
+      region:
+        static: ${AWS_REGION}
+      s3:
+        endpoint: ${AWS_S3_ENDPOINT}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jackson:
+    mapper:
+      require-handlers-for-java8-times: false
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+  datasource:
+    url: ${PG_DATABASE_URL}
+    username: ${PG_DATABASE_USERNAME}
+    password: ${PG_DATABASE_PASSWORD}
+  application:
+    name: file-delivery-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AUTH_DOMAIN}
+          audiences: ${AUTH_AUDIENCE}
+app:
+  aws:
+    s3:
+      statements:
+        bucket-name: ${AWS_S3_STATEMENTS_BUCKET_NAME}
+        object-key-prefix: ${AWS_S3_STATEMENTS_OBJECT_KEY_PREFIX}
+server:
+  port: ${SERVER_PORT}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  cloud:
+    aws:
+      credentials:
+        profile:
+          name: lfokazi
+      region:
+        static: af-south-1
+      s3:
+        endpoint: http://localhost:4566
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-dfr2z2zh4u525bbm.eu.auth0.com/
+          audiences: https://api.accounts.app
+app:
+  aws:
+    s3:
+      statements:
+        bucket-name: documents-bucket
+        object-key-prefix: statements/

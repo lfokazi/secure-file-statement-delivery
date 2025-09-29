@@ -6,6 +6,7 @@ import lombok.extern.jackson.Jacksonized;
 
 import java.net.URL;
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 @Builder
 @Jacksonized
@@ -13,4 +14,5 @@ import java.time.Duration;
 public class StatementDownloadInfo {
     private final URL url;
     private final Duration duration;
+    private final LocalDateTime expiresAt;
 }

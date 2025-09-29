@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.net.URL;
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 @Service
@@ -25,9 +26,10 @@ public class StatementDownloaderImpl implements StatementDownloader {
 
     @Nonnull
     @Override
-    public StatementDownloadInfo download(@Nonnull StatementDownloadParams params) {
-        var statement = statementRepository.findById(params.getStatementId())
+    public StatementDownloadInfo download(long statementId, @Nonnull StatementDownloadParams params) {
+        var statement = statementRepository.findById(statementId)
                 .orElseThrow(() -> new ObjectNotFoundException("Statement not found."));
+        var now = LocalDateTime.now();
         var duration = Duration.ofMillis(params.getDurationInMillis());
 
         var url = s3Operations.createSignedGetURL(statement.getBucketName(), statement.getObjectKey(), duration);
@@ -37,6 +39,7 @@ public class StatementDownloaderImpl implements StatementDownloader {
         return StatementDownloadInfo.builder()
                 .url(url)
                 .duration(duration)
+                .expiresAt(now.plus(duration))
                 .build();
     }
 

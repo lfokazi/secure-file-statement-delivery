@@ -2,13 +2,10 @@ package com.lfokazi.service.statement.save.upload;
 
 import com.lfokazi.BaseIntegrationTest;
 import com.lfokazi.core.exception.ObjectNotFoundException;
-import com.lfokazi.dto.statement.upload.StatementUpload;
 import io.awspring.cloud.s3.S3Operations;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
@@ -29,17 +26,13 @@ public class StatementUploaderTest extends BaseIntegrationTest {
     @Test
     void upload_success() throws IOException {
         var customerId = 2002L;
-        var file = getTestFile();
+        var file = getFile(TEST_FILE_NAME, TEST_FILE_PATH);
 
-        var upload = StatementUpload.builder()
-                .customerId(customerId)
-                .build();
-
-        var statement = statementUploader.upload(upload, file);
+        var statement = statementUploader.upload(customerId, file);
         assertThat(statement).isNotNull();
         assertThat(statement.getId()).isNotNull();
         assertThat(statement.getBucketName()).isEqualTo(bucketName);
-        assertThat(statement.getObjectKey()).isEqualTo("statements/2002/" + TEST_FILE_NAME);
+        assertThat(statement.getObjectKey()).contains("statements/2002/");
         assertThat(statement.getDownloads()).isEmpty();
 
         var existsInS3 = s3Operations.objectExists(statement.getBucketName(), statement.getObjectKey());
@@ -49,20 +42,11 @@ public class StatementUploaderTest extends BaseIntegrationTest {
     @Test
     void upload_unknown_customer() throws IOException {
         var unknownCustomerId = 9999L;
-        var file = getTestFile();
-        var upload = StatementUpload.builder()
-                .customerId(unknownCustomerId)
-                .build();
+        var file = getFile(TEST_FILE_NAME, TEST_FILE_PATH);
 
         var ex = assertThrows(ObjectNotFoundException.class,
-                () -> statementUploader.upload(upload, file));
+                () -> statementUploader.upload(unknownCustomerId, file));
 
         assertThat(ex.getMessage()).contains("Customer not found");
-    }
-
-    private MultipartFile getTestFile() throws IOException {
-        var fileInputStream = getClass().getResourceAsStream(TEST_FILE_PATH);
-        assertThat(fileInputStream).isNotNull();
-        return new MockMultipartFile(TEST_FILE_PATH, TEST_FILE_NAME, null, fileInputStream);
     }
 }

@@ -18,6 +18,9 @@ otel-api = "1.44.1"
 otel-instrumentation = "2.10.0-alpha"
 otel-annotations = "2.12.0"
 
+# Mapping
+modelmapper = "3.2.4"
+
 [libraries]
 # Spring Boot
 spring-boot-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "spring-boot" }
@@ -63,6 +66,9 @@ micrometer-core = { module = "io.micrometer:micrometer-core" }
 # JSON Processing
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
 jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" }
+
+# Mapping
+modelmapper = { module = "org.modelmapper:modelmapper", version.ref = "modelmapper" }
 
 # Database Drivers
 postgresql-driver = { module = "org.postgresql:postgresql", version.ref = "postgresql" }

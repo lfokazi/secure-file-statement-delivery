@@ -1,0 +1,25 @@
+plugins {
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.java)
+}
+
+group = 'com.lfokazi.statements'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Platform dependencies for BOM management
+    implementation(platform(libs.spring.boot.dependencies))
+    implementation libs.spring.boot.starter.validation
+    implementation libs.jackson.databind
+
+    annotationProcessor libs.lombok
+    compileOnly libs.lombok
+}
+
+test {
+    useJUnitPlatform()
+}

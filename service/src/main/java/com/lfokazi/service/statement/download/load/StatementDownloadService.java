@@ -8,4 +8,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface StatementDownloadService {
     @Nonnull Page<StatementDownload> findDownloads(@Nonnull Pageable pageable, @Nonnull StatementDownloadFilter filter);
+    @Nonnull Page<StatementDownload> findDownloads(@Nonnull Pageable pageable, long statementId,
+                                                   @Nonnull StatementDownloadFilter filter);
 }

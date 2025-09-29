@@ -18,14 +18,15 @@ import static java.util.Optional.ofNullable;
 @Builder
 @RequiredArgsConstructor
 public class StatementDownloadSpecification implements Specification<StatementDownload> {
+    private final Long statementId;
     private final StatementDownloadFilter filter;
 
     @Override
     public Predicate toPredicate(@Nonnull Root<StatementDownload> root, CriteriaQuery<?> query,
                                  @Nonnull CriteriaBuilder criteriaBuilder) {
         var predicates = new ArrayList<Predicate>();
-        ofNullable(filter.getStatementId()).ifPresent(it ->
-                predicates.add(criteriaBuilder.equal(root.get("statement").get("id"), it)));
+        ofNullable(statementId).or(() -> ofNullable(filter.getStatementId()))
+                .ifPresent(it -> predicates.add(criteriaBuilder.equal(root.get("statement").get("id"), it)));
         ofNullable(filter.getCustomerId()).ifPresent(it ->
                 predicates.add(criteriaBuilder.equal(root.get("statement").get("customer").get("id"), it)));
         ofNullable(filter.getUserRequestedId()).ifPresent(it ->
