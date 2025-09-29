@@ -14,7 +14,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class Customer {
     @Version
     private int version;
 
-    @CreatedDate
+    @CreationTimestamp
     private LocalDateTime created;
 
     private String userId;
