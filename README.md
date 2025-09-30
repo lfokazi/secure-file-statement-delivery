@@ -161,7 +161,18 @@ The response contains the the S3 presigned URL which is shared with the customer
 
 The customer can access the document for the specified duration. Once expired you?ll see:
 
-![Screenshot 2025-09-30 at 13.20.53.png](Secure%20File%20Delivery%20System%2027e7cdc97024802a8e60fd04acb7dbca/Screenshot_2025-09-30_at_13.20.53.png)
+```
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Error>
+<Code>AccessDenied</Code>
+<Message>Request has expired</Message>
+<X-Amz-Expires>30</X-Amz-Expires>
+<Expires>2025-09-30T11:19:40Z</Expires>
+<ServerTime>2025-09-30T11:20:42Z</ServerTime>
+<RequestId>Y5XM80XJ62N22PJ8</RequestId>
+<HostId>GxNh51avnhiEXRj9O1/e+RFr/3lbnRVyGZck1wh287lvPMkEfXTpZhs3gvbTYI98LQ5cGENSM83xcFRDZurXErhV/d+AzQGG</HostId>
+</Error>
+```
 
 **Downloads Auditing**
 
