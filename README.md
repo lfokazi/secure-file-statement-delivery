@@ -133,6 +133,8 @@ Provide a customer Id as well as a file. Pre-seeded customer Ids are 2000 ? 2004
 
 The file is uploaded to the configured S3 Bucket. Upload path is not considered a critical path so it is performed async.
 
+A sample statement test file generated with Claude Sonnet 4 is available at samples/monthly_statement.html
+
 **List Statements (Admin)**
 
 Supported with the  **`GET /v1/api/workforce/documents/customer/statements`** endpoint.
